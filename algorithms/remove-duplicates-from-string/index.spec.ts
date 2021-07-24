@@ -1,4 +1,8 @@
-import { removeDuplicatesUsingSet, removeDuplicatesUsingFilter } from '.';
+import {
+  removeDuplicatesUsingSet,
+  removeDuplicatesUsingFilter,
+  removeDuplicatesUsingObject,
+} from '.';
 
 const makeSut = () => {
   const input = 'abcabc';
@@ -28,6 +32,19 @@ describe('remove-duplicates-from-string', () => {
 
       // Act
       const result = removeDuplicatesUsingFilter(input);
+
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
+  });
+
+  describe('removeDuplicatesUsingObject', () => {
+    it('Should remove duplicates from string', () => {
+      // Arrange
+      const { input, expectedResult } = makeSut();
+
+      // Act
+      const result = removeDuplicatesUsingObject(input);
 
       // Assert
       expect(result).toEqual(expectedResult);
