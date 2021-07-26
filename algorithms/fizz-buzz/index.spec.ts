@@ -36,4 +36,16 @@ describe('FizzBuzz', () => {
     // Assert
     expect(result).toEqual(expectedResult);
   });
+
+  it('It should return invalid entry when number is not divisible by three or five', () => {
+    // Arrange
+    const entry = 2;
+    const expectedResult = 'invalid entry';
+
+    // Act
+    const result = fizzbuzz(entry);
+
+    // Assert
+    expect(result).toEqual(expectedResult);
+  });
 });
