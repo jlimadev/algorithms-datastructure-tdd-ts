@@ -10,4 +10,14 @@ const revereStringUsingForLoop = (str: string): string => {
   return data.join('');
 };
 
-export { reverseStringUsingArray, revereStringUsingForLoop };
+const revereStringUsingReduce = (str: string): string => {
+  return Array.from(str).reduce((reversed, current) => {
+    return current + reversed;
+  }, '');
+};
+
+export {
+  reverseStringUsingArray,
+  revereStringUsingForLoop,
+  revereStringUsingReduce,
+};
