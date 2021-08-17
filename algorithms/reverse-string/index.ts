@@ -4,7 +4,7 @@ const reverseStringUsingArray = (str: string): string => {
 
 const revereStringUsingForLoop = (str: string): string => {
   const data = [];
-  for (let i = str.length; i >= 0; i--) {
+  for (let i = str.length - 1; i >= 0; i--) {
     data.push(str[i]);
   }
   return data.join('');
