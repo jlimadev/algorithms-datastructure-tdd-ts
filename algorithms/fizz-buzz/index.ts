@@ -1,12 +1,26 @@
 const fizzbuzz = (entry: number): string => {
-  const EMPTY = '';
-  const fizz = entry % 3 === 0 ? 'fizz' : EMPTY;
-  const buzz = entry % 5 === 0 ? 'buzz' : EMPTY;
+  const empty = '';
+  const fizz = entry % 3 === 0 ? 'fizz' : empty;
+  const buzz = entry % 5 === 0 ? 'buzz' : empty;
 
-  const response =
-    `${fizz}${buzz}` !== EMPTY ? `${fizz}${buzz}` : 'invalid entry';
-
-  return response;
+  return `${fizz}${buzz}` !== empty ? `${fizz}${buzz}` : 'invalid entry';
 };
 
-export { fizzbuzz };
+// Ugly solution
+const fizzbuzzUglySolution = (entry: number): string => {
+  if (entry % 3 === 0 && entry % 5 === 0) {
+    return 'fizzbuzz';
+  }
+
+  if (entry % 3 === 0) {
+    return 'fizz';
+  }
+
+  if (entry % 5 === 0) {
+    return 'buzz';
+  }
+
+  return 'invalid entry';
+};
+
+export { fizzbuzz, fizzbuzzUglySolution };

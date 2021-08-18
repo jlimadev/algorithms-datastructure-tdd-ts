@@ -1,4 +1,4 @@
-import { fizzbuzz } from '.';
+import { fizzbuzz, fizzbuzzUglySolution } from '.';
 
 describe('FizzBuzz', () => {
   it('It should return fizz when number is divisible by three', () => {
