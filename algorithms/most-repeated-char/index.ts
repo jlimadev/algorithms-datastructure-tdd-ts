@@ -1,5 +1,6 @@
 type CharMap = { [anyStr: string]: number }; // Index Signature (Typescript Only)
 
+// Using "for in" loop
 const mostRepeatedChar = (str: string): string => {
   const charMap: CharMap = {};
   let maxCount = 0;
@@ -19,27 +20,37 @@ const mostRepeatedChar = (str: string): string => {
   return mostRepeated;
 };
 
-// Pretty much the same logic, but using "Object.entries" to iteration instead of "for in"
+// Using "Object.entries" to iteration instead of "for in"
 const mostRepeatedCharV2 = (str: string): string => {
   const charMap: CharMap = {};
-  let maxCount = 0;
-  let mostRepeated = '';
 
-  str.split('').forEach(char => {
+  Array.from(str).forEach(char => {
     charMap[char] = charMap[char] + 1 || 1;
   });
 
-  Object.entries(charMap).forEach(entry => {
-    const key = entry[0];
-    const value = entry[1];
+  // Object.entries(charMap).sort((a, b) => b[1] - a[1]);
+  const sortedMap = Object.entries(charMap).sort(
+    (current: [string, number], next: [string, number]) => {
+      const currentValue = current[1];
+      const nextValue = next[1];
+      return nextValue - currentValue;
+    },
+  );
 
-    if (value > maxCount) {
-      maxCount = value;
-      mostRepeated = key;
-    }
-  });
-
-  return mostRepeated;
+  // get the first element of sortedMap and get the key of this first element
+  return sortedMap[0][0];
 };
 
-export { mostRepeatedChar, mostRepeatedCharV2 };
+const mostRepeatedCharV2Optimized = (str: string): string => {
+  const charMap: CharMap = {};
+  Array.from(str).forEach(char => {
+    charMap[char] = charMap[char] + 1 || 1;
+  });
+
+  return Object.entries(charMap)
+    .sort((current, next) => next[1] - current[1])
+    .map(sorted => sorted[0])
+    .find(() => true)!;
+};
+
+export { mostRepeatedChar, mostRepeatedCharV2, mostRepeatedCharV2Optimized };
