@@ -5,5 +5,6 @@ This is a repository where I will implement some algorithms and data structures 
 For now, these are the algorithms implemented:
 - FizzBuzz
 - Palindrome
-- Reverse string
+- Reverse String
+- Reverse Integer
 - Remove duplicates from string
