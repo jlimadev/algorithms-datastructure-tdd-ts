@@ -8,3 +8,4 @@ For now, these are the algorithms implemented:
 - Reverse String
 - Reverse Integer
 - Remove duplicates from string
+- Most repeated character from string
