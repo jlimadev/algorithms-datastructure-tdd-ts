@@ -22,8 +22,20 @@ const removeDuplicatesUsingObject = (input: string): string => {
   return Object.keys(myObject).join('');
 };
 
+const removeDuplicatesUsingMap = (input: string): string => {
+  const data = Array.from(input);
+  const cleanData: Array<string> = [];
+  data.forEach((element: string) => {
+    if (!cleanData.includes(element)) {
+      cleanData.push(element);
+    }
+  });
+  return cleanData.join('');
+};
+
 export {
   removeDuplicatesUsingSet,
   removeDuplicatesUsingFilter,
   removeDuplicatesUsingObject,
+  removeDuplicatesUsingMap,
 };

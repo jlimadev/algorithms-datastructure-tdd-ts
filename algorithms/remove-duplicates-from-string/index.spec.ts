@@ -2,6 +2,7 @@ import {
   removeDuplicatesUsingSet,
   removeDuplicatesUsingFilter,
   removeDuplicatesUsingObject,
+  removeDuplicatesUsingMap,
 } from '.';
 
 const makeSut = () => {
@@ -45,6 +46,19 @@ describe('remove-duplicates-from-string', () => {
 
       // Act
       const result = removeDuplicatesUsingObject(input);
+
+      // Assert
+      expect(result).toEqual(expectedResult);
+    });
+  });
+
+  describe('removeDuplicatesUsingMap', () => {
+    it('Should remove duplicates from string', () => {
+      // Arrange
+      const { input, expectedResult } = makeSut();
+
+      // Act
+      const result = removeDuplicatesUsingMap(input);
 
       // Assert
       expect(result).toEqual(expectedResult);
