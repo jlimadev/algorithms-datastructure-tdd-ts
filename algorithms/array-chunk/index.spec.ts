@@ -22,4 +22,34 @@ describe('reverse string tests', () => {
     const response = chunkArray(array, chunkSize);
     expect(response).toEqual(expectedResponse);
   });
+
+  it('Should return right chunk array - third case', () => {
+    const array = [1, 2, 3, 4, 5, 6, 7];
+    const chunkSize = 10;
+    const expectedResponse = [1, 2, 3, 4, 5, 6, 7];
+
+    const response = chunkArray(array, chunkSize);
+    expect(response).toEqual(expectedResponse);
+  });
+
+  it('Should return right chunk array - fourth case', () => {
+    const array = [1, 2, 3, 4, 5, 6, 7];
+    const chunkSize = 3;
+    const expectedResponse = [[1, 2], [3, 4], [5]];
+
+    const response = chunkArray(array, chunkSize);
+    expect(response).toEqual(expectedResponse);
+  });
+
+  it('Should return right chunk array - fifth case', () => {
+    const array = [1, 2, 3, 4, 5, 6, 7];
+    const chunkSize = 4;
+    const expectedResponse = [
+      [1, 2, 3, 4],
+      [5, 6, 7],
+    ];
+
+    const response = chunkArray(array, chunkSize);
+    expect(response).toEqual(expectedResponse);
+  });
 });
