@@ -8,6 +8,12 @@ const chunkArray = (
   size: number,
 ): Array<Array<number>> => {
   const response: Array<Array<number>> = [];
+  let index = 0;
+
+  while (index < array.length) {
+    response.push(array.slice(index, index + size));
+    index += size;
+  }
   return response;
 };
 

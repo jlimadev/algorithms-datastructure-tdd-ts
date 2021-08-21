@@ -26,7 +26,7 @@ describe('reverse string tests', () => {
   it('Should return right chunk array - third case', () => {
     const array = [1, 2, 3, 4, 5, 6, 7];
     const chunkSize = 10;
-    const expectedResponse = [1, 2, 3, 4, 5, 6, 7];
+    const expectedResponse = [[1, 2, 3, 4, 5, 6, 7]];
 
     const response = chunkArray(array, chunkSize);
     expect(response).toEqual(expectedResponse);
@@ -35,7 +35,7 @@ describe('reverse string tests', () => {
   it('Should return right chunk array - fourth case', () => {
     const array = [1, 2, 3, 4, 5, 6, 7];
     const chunkSize = 3;
-    const expectedResponse = [[1, 2], [3, 4], [5]];
+    const expectedResponse = [[1, 2, 3], [4, 5, 6], [7]];
 
     const response = chunkArray(array, chunkSize);
     expect(response).toEqual(expectedResponse);
