@@ -1,4 +1,4 @@
-import { chunkArray } from '.';
+import { chunkArray, chunkArrayV2 } from '.';
 
 describe('reverse string tests', () => {
   it('Should return right chunk array - first case', () => {
