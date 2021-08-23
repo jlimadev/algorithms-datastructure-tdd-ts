@@ -1,4 +1,4 @@
-import { chunkArray, chunkArrayV2, tryAgain } from '.';
+import { chunkArray, chunkArrayV2 } from '.';
 
 describe('reverse string tests', () => {
   it('Should return right chunk array - first case', () => {
@@ -10,7 +10,7 @@ describe('reverse string tests', () => {
       [5, 6],
     ];
 
-    const response = tryAgain(array, chunkSize);
+    const response = chunkArray(array, chunkSize);
     expect(response).toEqual(expectedResponse);
   });
 
@@ -19,7 +19,7 @@ describe('reverse string tests', () => {
     const chunkSize = 2;
     const expectedResponse = [[1, 2], [3, 4], [5, 6], [7]];
 
-    const response = tryAgain(array, chunkSize);
+    const response = chunkArray(array, chunkSize);
     expect(response).toEqual(expectedResponse);
   });
 
@@ -28,7 +28,7 @@ describe('reverse string tests', () => {
     const chunkSize = 10;
     const expectedResponse = [[1, 2, 3, 4, 5, 6, 7]];
 
-    const response = tryAgain(array, chunkSize);
+    const response = chunkArray(array, chunkSize);
     expect(response).toEqual(expectedResponse);
   });
 
@@ -37,7 +37,7 @@ describe('reverse string tests', () => {
     const chunkSize = 3;
     const expectedResponse = [[1, 2, 3], [4, 5, 6], [7]];
 
-    const response = tryAgain(array, chunkSize);
+    const response = chunkArray(array, chunkSize);
     expect(response).toEqual(expectedResponse);
   });
 
@@ -49,7 +49,7 @@ describe('reverse string tests', () => {
       [5, 6, 7],
     ];
 
-    const response = tryAgain(array, chunkSize);
+    const response = chunkArray(array, chunkSize);
     expect(response).toEqual(expectedResponse);
   });
 });
