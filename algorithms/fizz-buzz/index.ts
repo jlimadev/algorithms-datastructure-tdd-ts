@@ -1,4 +1,4 @@
-const fizzbuzz = (entry: number): string => {
+export const fizzbuzz = (entry: number): string => {
   const empty = '';
   const fizz = entry % 3 === 0 ? 'fizz' : empty;
   const buzz = entry % 5 === 0 ? 'buzz' : empty;
@@ -7,7 +7,7 @@ const fizzbuzz = (entry: number): string => {
 };
 
 // Ugly solution
-const fizzbuzzUglySolution = (entry: number): string => {
+export const fizzbuzzUglySolution = (entry: number): string => {
   if (entry % 3 === 0 && entry % 5 === 0) {
     return 'fizzbuzz';
   }
@@ -22,5 +22,3 @@ const fizzbuzzUglySolution = (entry: number): string => {
 
   return 'invalid entry';
 };
-
-export { fizzbuzz, fizzbuzzUglySolution };
