@@ -5,7 +5,7 @@
   "author": "Jonathan Alves de Lima",
   "license": "MIT",
   "scripts": {
-    "test": "jest",
+    "test": "jest --maxWorkers=4",
     "lint:fix": "eslint --fix"
   },
   "devDependencies": {
